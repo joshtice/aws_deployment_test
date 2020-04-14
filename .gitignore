@@ -1,5 +1,5 @@
 .DS_Store
-.env
+# .env #.env being added with template values. DO NOT COMMIT ACTUAL SECRETS
 .flaskenv
 *.pyc
 *.pyo
