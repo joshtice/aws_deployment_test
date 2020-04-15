@@ -6,15 +6,12 @@ import logging
 import datetime
 import functools
 import jwt
-import boto3
 
 # pylint: disable=import-error
 from flask import Flask, jsonify, request, abort
 
-ssm = boto3.client('ssm')
-parameter = ssm.get_parameter(Name='JWT_SECRET', WithDecryption=True)
 
-JWT_SECRET = parameter['Parameter']['Value']
+JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
 
