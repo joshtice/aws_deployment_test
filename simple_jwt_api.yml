@@ -32,6 +32,9 @@ spec:
       containers:
         - name: simple-jwt-api
           image: CONTAINER_IMAGE
+	  env:
+            - name: JWT_SECRET
+              value: arn:aws:ssm:us-east-2:850743350707:parameter/JWT_SECRET
           securityContext:
             privileged: false
             readOnlyRootFilesystem: false
